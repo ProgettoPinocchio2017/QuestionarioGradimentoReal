@@ -103,7 +103,11 @@ public class OttavaDomandaController implements Initializable {
 
     @FXML
     void doNext(ActionEvent event) throws IOException {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource(""));
+        
+        for (int i =0 ; i <9 ; i ++){
+        System.out.println(Questionario.vettore[i]);}
+        
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("PaginaFinale.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -150,8 +154,7 @@ public class OttavaDomandaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        for (int i =0 ; i <9 ; i ++){
-        System.out.println(Questionario.vettore[i]);}
+        
         switch ( Questionario.vettore[7]){
             case 1: idUno.setSelected(true);break;
             case 2: idDue.setSelected(true);break;
