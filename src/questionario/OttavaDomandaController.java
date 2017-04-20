@@ -103,10 +103,10 @@ public class OttavaDomandaController implements Initializable {
 
     @FXML
     void doNext(ActionEvent event) throws IOException {
-        
-        for (int i =0 ; i <9 ; i ++){
+
+        for (int i =0 ; i <8 ; i ++){
         System.out.println(Questionario.vettore[i]);}
-        
+
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("PaginaFinale.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
