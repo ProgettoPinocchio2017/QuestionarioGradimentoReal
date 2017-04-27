@@ -5,6 +5,9 @@
  */
 package questionario;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -103,7 +106,7 @@ public class PaginaFinaleController implements Initializable {
             // second part (the image)
             messageBodyPart = new MimeBodyPart();
             DataSource fds = new FileDataSource(
-                    "C:\\Users\\4D_2016-17\\Documents\\NetBeansProjects\\JavaFXApplication6\\src\\questionario\\unnamed.png");
+                    "F:\\Quarta\\Informatica\\Progetto Pinocchio\\questionario con email\\src\\questionario\\unnamed.png");
 
             messageBodyPart.setDataHandler(new DataHandler(fds));
             messageBodyPart.setHeader("Content-ID", "<image>");
@@ -121,7 +124,16 @@ public class PaginaFinaleController implements Initializable {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-    //mettere qua pagina web
+    try{
+      URL url = new URL("http://www.google.it/");
+      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+      }
+      catch(MalformedURLException ex) {
+        ex.printStackTrace();
+        
+      } catch(IOException ioex) {
+        ioex.printStackTrace();
+      }
 }
 
 @Override
