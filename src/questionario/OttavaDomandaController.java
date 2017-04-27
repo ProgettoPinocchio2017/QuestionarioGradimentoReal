@@ -107,7 +107,7 @@ public class OttavaDomandaController implements Initializable {
         for (int i =0 ; i <8 ; i ++){
         System.out.println(Questionario.vettore[i]);}
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("PaginaFinale.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("SceltaSiNo.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

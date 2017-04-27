@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="questionario.SceltaSiNoController">
+   <bottom>
+      <Button fx:id="btnFine" mnemonicParsing="false" onAction="#doFine" text="Fine" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </bottom>
+   <top>
+      <TextField alignment="CENTER" text="Vuoi ricevere la foto via email?" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+   </top>
+   <left>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <RadioButton fx:id="rdbSi" contentDisplay="CENTER" mnemonicParsing="false" text="Si">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Scelta" />
+               </toggleGroup>
+            </RadioButton>
+         </children>
+      </HBox>
+   </left>
+   <right>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <RadioButton fx:id="rbdNo" mnemonicParsing="false" text="No" toggleGroup="$Scelta">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </HBox>
+   </right>
+</BorderPane>

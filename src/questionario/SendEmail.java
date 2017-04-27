@@ -9,6 +9,10 @@ package questionario;
  *
  * @author 4D 2016-2017
  */
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -78,7 +82,7 @@ public class SendEmail {
          // second part (the image)
          messageBodyPart = new MimeBodyPart();
          DataSource fds = new FileDataSource(
-            "F:\\Progetto Pinocchio\\EmailconImmagine\\src\\emailconimmagine\\download.jpg");
+            "F:\\Quarta\\Informatica\\Progetto Pinocchio\\questionario con email\\src\\questionario\\unnamed.png");
 
          messageBodyPart.setDataHandler(new DataHandler(fds));
          messageBodyPart.setHeader("Content-ID", "<image>");
@@ -96,6 +100,16 @@ public class SendEmail {
       } catch (MessagingException e) {
          throw new RuntimeException(e);
       }
+      try{
+      URL url = new URL("http://www.google.it/");
+      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+      }
+      catch(MalformedURLException ex) {
+        ex.printStackTrace();
+        
+      } catch(IOException ioex) {
+        ioex.printStackTrace();
+      }
    }
-    }
+   }
     

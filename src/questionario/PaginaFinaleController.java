@@ -121,7 +121,7 @@ public class PaginaFinaleController implements Initializable {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-    
+    //mettere qua pagina web
 }
 
 @Override
