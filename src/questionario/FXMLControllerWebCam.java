@@ -46,7 +46,7 @@ import static org.opencv.imgproc.Imgproc.resize;
  */
 public class FXMLControllerWebCam implements Initializable {
 
-    VideoCapture webSource = null;
+     VideoCapture webSource = null;
     Mat frame = new Mat();
     MatOfByte mem = new MatOfByte();
     CascadeClassifier faceDetector = new CascadeClassifier(FXMLControllerWebCam.class.getResource("haarcascade_frontalface_alt.xml").getPath().substring(1));
