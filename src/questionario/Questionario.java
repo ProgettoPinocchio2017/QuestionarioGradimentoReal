@@ -12,41 +12,36 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
+import org.opencv.core.Core;
 
 /**
  *
  * @author princ
  */
-
 //Primo controller
 public class Questionario extends Application {
-    public static int vettore [] = new int [8];
-    
-    
+
+    public static int vettore[] = new int[8];
+
     @Override
     public void start(Stage stage) throws Exception {
-        
-        
+
         Parent root = FXMLLoader.load(getClass().getResource("PrimaDomanda.fxml"));
-       
-         
+
         Scene scene = new Scene(root);
 
-        
         stage.setScene(scene);
         stage.show();
-        
-        
+
     }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         launch(args);
-        
-        
+
     }
-    
+
 }

@@ -6,6 +6,7 @@
 package questionario;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -14,11 +15,16 @@ import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
@@ -133,7 +139,7 @@ public class FXMLControllerWebCam implements Initializable {
 //C:\\Users\\4D_2016-17\\Desktop\\JavaFXOpenCvTask\\src\\javafxopencvtask\\
 
     @FXML
-    void doDetection(ActionEvent event) {
+    void doDetection(ActionEvent event) throws IOException {
         int i = 1;
 
         faceDetector = new CascadeClassifier("C:\\Users\\4D_2016-17\\Desktop\\JavaFXOpenCvTask\\src\\javafxopencvtask\\haarcascade_frontalface_alt.xml");
@@ -190,6 +196,14 @@ public class FXMLControllerWebCam implements Initializable {
         Image im2 = new Image(new ByteArrayInputStream(mem.toArray()));
           //Mat destinationROI = im2.submat();
         imvCam2.setImage(im2);
+        
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("SceltaSiNo.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        window.setScene(tableViewScene);
+        window.show();
     }
 
     @Override
